@@ -1,10 +1,10 @@
 function checkUsersValid(goodUsers) {
     return function allUsersValid(submittedUsers) {
-        goodUsers.some((item) => {
-            submittedUsers.every(() => {
-              return item.id
-          })
-      })
+       return submittedUsers.every((item) => {
+           return goodUsers.some((currentItem) => {
+               return item.id === currentItem.id;
+           })
+       })
     };
   }
 
